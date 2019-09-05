@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Poppins&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+.pizza-bg {
+  background-image: url('./img/pizza-bg.jpg');
+  height: 700px;
+  width: 100%;
+  background-size: cover;
+  background-position-y: -270px;
+  background-repeat: no-repeat;
+}
+
+.trans-bg {
+  background-color: transparent !important;
+}
+
+.brand-name {
+  font-size: 2.0rem !important;
+}
+
+.thick-white {
+  color: #fff !important;
+}
+
+.call-to-action {
+  color: #fff;
+  margin-top: 50%;
+  font-size: 3.5rem;
+  text-align: center;
+  /* margin-bottom: 50%; */
+}
+
+.card-sec {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  vertical-align: center;
+
+}
+
+.align-center {
+  text-align: center;
+}
+
+.under-action {
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.dark-footer {
+  background-color: #282c34;
+  color: #fff;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
