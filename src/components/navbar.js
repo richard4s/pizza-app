@@ -21,7 +21,7 @@ export default class MainNavbar extends React.Component {
         super(props);
 
         this.state = {
-            cart: 0
+            cart: localStorage.getItem('cart')
         }
     }    
 
