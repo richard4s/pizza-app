@@ -25,7 +25,7 @@ export default class CardSection extends React.Component {
     
     grabPizza() {
         axios
-        .get("http://127.0.0.1:8000/api/pizzas")
+        .get("https://pizza-laravel-api.herokuapp.com/api/pizzas")
         .then(response => {
             this.setState({
               pizza: response.data.pizza,
