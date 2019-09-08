@@ -37,7 +37,7 @@ export default class CardSection extends React.Component {
     
     componentDidMount() {
         this.grabPizza();
-        console.log('dbik: ' + localStorage.getItem('cart'));
+        console.log('Cart: ' + localStorage.getItem('cart'));
     }
 
     render() {
