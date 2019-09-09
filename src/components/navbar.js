@@ -4,6 +4,8 @@ import { Navbar, Nav, Badge, NavDropdown } from 'react-bootstrap';
 import { FiShoppingCart } from "react-icons/fi";
 import { FiSearch } from "react-icons/fi";
 
+import { NavLink, Link } from 'react-router-dom';
+
 const CartIcon = (props) => {
     return(
         <div>
@@ -37,13 +39,16 @@ export default class MainNavbar extends React.Component {
 
                     <Nav>
                         <Nav.Link href="#features" className="thick-white"><FiSearch /></Nav.Link>
-                        <Nav.Link href="#features" className="thick-white">About</Nav.Link>
+                        <Nav.Link className="thick-white"><NavLink exact to="/about">About</NavLink></Nav.Link>
                         <Nav.Link href="#pricing" className="thick-white">
                             
                         </Nav.Link>
 
-                        <NavDropdown title={<CartIcon nos={this.state.cart} />} id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Your Cart is Empty</NavDropdown.Item>
+                        <NavDropdown title={<NavLink exact to="/checkout"><CartIcon nos={this.state.cart} /></NavLink>} id="basic-nav-dropdown">
+                            {!this.state.cart ?
+                                <Nav.Link href="#" className="thick-white">Your Cart is Empty</Nav.Link> :
+                                <NavLink exact to="/checkout">Go To Checkout</NavLink>
+                            }
                         </NavDropdown>
 
                         <Nav.Link href="#deets" className="thick-white">Login</Nav.Link>

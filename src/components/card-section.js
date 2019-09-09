@@ -5,6 +5,8 @@ import { FiPlusCircle } from "react-icons/fi";
 import { BrowserRouter as Route, Link, Switch } from "react-router-dom";
 import Checkout from '../checkout';
 
+// import { NavLink, Link } from 'react-router-dom';
+
 const axios = require('axios');
 const uuid = require("uuid");
 
@@ -206,7 +208,7 @@ function App(props) {
                             <Col className="mx-auto" style={{ textAlign: 'right' }}>
 
                                 {/* <Link to={{ pathname: '/checkout' }}> */}
-                                    <Button variant="success" onClick={() => addPizza(props.pizzaID)}><FiPlusCircle /> Add to Cart </Button>
+                                    <Button variant="success" onClick={() => addPizza(props.pizzaID)}><FiPlusCircle /> <Link to="/checkout">Checkout</Link> </Button>
                                 {/* </Link> */}
                                 
                             </Col>

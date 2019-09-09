@@ -41,6 +41,24 @@ body {
   /* margin-bottom: 50%; */
 }
 
+.spacer {
+  margin-top: 125px;
+  margin-bottom: 125px;
+}
+
+.thick-text {
+  text-align: center;
+  font-size: 3.2em;
+  font-weight: 900;
+}
+
+.to-center {
+  /* margin-left: 10%;
+  margin-right: 10%; */
+  align-content: center;
+  text-align: center;
+}
+
 .card-sec {
   background-image: url('./img/background-1.svg');
   /* background-size: cover; */

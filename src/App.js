@@ -8,25 +8,24 @@ import PizzaSection from './components/pizza-section';
 import CardSection from './components/card-section';
 import Footer from './components/footer';
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Checkout from './checkout';
+// import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Router } from 'react-router-dom';
+
+import Main from './components/Main';
 
 function App() {
   return (
-    <Router>
+    // <Router>
       <div>
-
-        <div className="pizza-bg" >
-          <Navbar />
-          <PizzaSection />
-        </div>
-
-        <CardSection />
-        <Footer />
+        {/* <MyNavbar /> */}
+        {/* <SearchSection /> */}
+        {/* <CardSection />
+        <PropertyPrices /> */}
+        <Main />
       </div>
-
-      <Route path="/checkout" component={Checkout} />
-    </Router>
+    // </Router>
+    
+    
   );
 }
 
