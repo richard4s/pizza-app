@@ -4,14 +4,14 @@ import { Navbar, Nav, Badge, NavDropdown } from 'react-bootstrap';
 import { FiShoppingCart } from "react-icons/fi";
 import { FiSearch } from "react-icons/fi";
 
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const CartIcon = (props) => {
     return(
         <div>
             <FiShoppingCart className="thick-white" />&nbsp; 
                 <Badge pill variant="info">
-                    {props.nos}
+                    {parseInt(props.nos)}
                 </Badge>  
         </div>
     )
@@ -23,11 +23,19 @@ export default class MainNavbar extends React.Component {
         super(props);
 
         this.state = {
-            cart: localStorage.getItem('cart')
+            cart: null
         }
-    }    
+        
+    }   
+    
+    componentDidMount() {
+        this.setState ({
+            cart: localStorage.getItem('cart')
+        })
+    }
 
-    render() {
+    render() {        
+
         return(
             <Navbar className="trans-bg" collapseOnSelect expand="lg" bg="transparent" variant="dark">
                 <Navbar.Brand className="brand-name" href="#home">{'Pizza App'}</Navbar.Brand>
@@ -39,7 +47,7 @@ export default class MainNavbar extends React.Component {
 
                     <Nav>
                         <Nav.Link href="#features" className="thick-white"><FiSearch /></Nav.Link>
-                        <Nav.Link className="thick-white"><NavLink exact to="/about">About</NavLink></Nav.Link>
+                        <Nav.Link className="thick-white"><NavLink className="thick-white" exact to="/about">About</NavLink></Nav.Link>
                         <Nav.Link href="#pricing" className="thick-white">
                             
                         </Nav.Link>

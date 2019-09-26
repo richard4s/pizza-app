@@ -4,7 +4,7 @@ import Fra from '../img/france.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Image, Card, Button, Col, Row, Container } from 'react-bootstrap';
 
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import { FiSearch } from "react-icons/fi";
 
 export default class About extends React.Component {

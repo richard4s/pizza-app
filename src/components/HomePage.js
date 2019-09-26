@@ -8,7 +8,7 @@ import PizzaSection from './pizza-section';
 import CardSection from './card-section';
 import Footer from './footer';
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Route } from "react-router-dom";
 // import Checkout from './checkout';
 
 function HomePage() {

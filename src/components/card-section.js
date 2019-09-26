@@ -2,28 +2,28 @@ import React from 'react';
 import { Container, Row, Col, Card, Button, Modal, InputGroup, FormControl } from 'react-bootstrap';
 import { FiPlusCircle } from "react-icons/fi";
 
-import { BrowserRouter as Route, Link, Switch } from "react-router-dom";
-import Checkout from '../checkout';
+// import { BrowserRouter as Route, Link, Switch } from "react-router-dom";
+// import Checkout from '../checkout';
 
-// import { NavLink, Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 const axios = require('axios');
 const uuid = require("uuid");
 
-export default class CardSection extends React.Component {
+class CardSection extends React.Component {
 
-    // constructor(props) {
-    //     super(props);
+    constructor(props) {
+        super(props);
 
-    //     // this.addPizza = this.routeChange.bind(this);
-    // }
+        // this.addPizza = this.routeChange.bind(this);
 
-    state = {
-        isLoading: true,
-        pizza: [],
-        error: null,
-        // value: null
-      }
+        this.state = {
+            isLoading: true,
+            pizza: [],
+            error: null,
+            // value: null
+          }
+    }
     
     grabPizza() {
         axios
@@ -40,6 +40,11 @@ export default class CardSection extends React.Component {
     componentDidMount() {
         this.grabPizza();
         console.log('Cart: ' + localStorage.getItem('cart'));
+    }
+
+    goToCheckout = () => {
+        // this.props.history.push('/checkout');
+        this.props.router.push('checkout')
     }
 
     render() {
@@ -83,13 +88,18 @@ export default class CardSection extends React.Component {
     }
 }
 
+
 function addPizza(pizzaID) {
     var value = uuid.v4();
 
     localStorage.setItem('session', JSON.stringify(value));
     localStorage.setItem('pizzaID', JSON.stringify(pizzaID));
 
-    localStorage.setItem('cart', JSON.stringify(1));
+    localStorage.setItem('cart', (parseInt(localStorage.getItem('cart')) + 1));
+
+    // let mover = new CardSection();
+    // mover.goToCheckout();
+ 
 
     // let path = `checkout`;
     // this.props.history.push(path);
@@ -207,9 +217,9 @@ function App(props) {
                             </Col>
                             <Col className="mx-auto" style={{ textAlign: 'right' }}>
 
-                                {/* <Link to={{ pathname: '/checkout' }}> */}
-                                    <Button variant="success" onClick={() => addPizza(props.pizzaID)}><FiPlusCircle /> <Link to="/checkout">Checkout</Link> </Button>
-                                {/* </Link> */}
+                                <Link to="/checkout">
+                                    <Button variant="success" onClick={() => addPizza(props.pizzaID)}><FiPlusCircle /> Add to Cart</Button>
+                                </Link>
                                 
                             </Col>
                         </Row>
@@ -221,3 +231,5 @@ function App(props) {
         </>
     );
 }
+
+export default withRouter(CardSection);
