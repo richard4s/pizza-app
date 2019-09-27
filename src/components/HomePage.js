@@ -3,10 +3,10 @@ import React from 'react';
 // import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Navbar from './navbar';
-import PizzaSection from './pizza-section';
-import CardSection from './card-section';
-import Footer from './footer';
+import Navbar from './layoutComponents/navbar';
+import PizzaSection from './homeComponents/pizza-section';
+import CardSection from './homeComponents/card-section';
+import Footer from './layoutComponents/footer';
 
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 // import Checkout from './checkout';

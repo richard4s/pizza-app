@@ -43,6 +43,20 @@ export default class PizzaSection extends React.Component {
         .catch(error => this.setState({ error, isLoading: false }));
     }
 
+    confirmOrder() {
+        axios.post(`https://pizza-laravel-api.herokuapp.com/api/confirmOrder`, {
+            id: localStorage.getItem("pizzaID"),
+            firstName: 'Fred',
+            lastName: 'Flintstone'
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+    }
+
     render() {
 
         const { isLoading, pizza, error } = this.state;
@@ -67,7 +81,6 @@ export default class PizzaSection extends React.Component {
                                         <Card.Title> {pizza.productName} </Card.Title>
                                         <Card.Text> {pizza.productDescription} </Card.Text>
                                         <Card.Text> € {pizza.productPrice} </Card.Text>
-                                        {/* <App img={productImage} pizzaID={id} /> */}
                                     </Card.Body>
                                 </Card>
                             </Col>

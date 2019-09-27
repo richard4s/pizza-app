@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import HomePage from './HomePage';
 
 import About from './about';
-import Checkout from './checkout';
+import Checkout from './checkoutComponents/checkout';
 
 export default class Main extends React.Component {
     render() {

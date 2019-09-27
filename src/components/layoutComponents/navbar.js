@@ -59,8 +59,8 @@ export default class MainNavbar extends React.Component {
                             }
                         </NavDropdown>
 
-                        <Nav.Link href="#deets" className="thick-white">Login</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes" className="thick-white">Sign Up</Nav.Link>
+                        {/* <Nav.Link href="#deets" className="thick-white">Login</Nav.Link>
+                        <Nav.Link eventKey={2} href="#memes" className="thick-white">Sign Up</Nav.Link> */}
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
